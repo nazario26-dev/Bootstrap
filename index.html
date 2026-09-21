@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Nexo, uma vitrine fictícia de produtos com curadoria digital.">
+  <title>Nexo | Descubra o que combina com você</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="welcomeScreen" class="welcome-screen">
+    <div class="welcome-orbit orbit-one"></div>
+    <div class="welcome-orbit orbit-two"></div>
+    <nav class="container py-4" aria-label="Navegação inicial">
+      <a class="brand-mark" href="#welcomeScreen" aria-label="Nexo início"><span class="brand-dot"></span>nexo</a>
+      <button class="btn btn-sm btn-ghost-light float-end" data-bs-toggle="modal" data-bs-target="#loginModal">
+        <i class="bi bi-person me-2"></i>Já tenho conta
+      </button>
+    </nav>
+
+    <section class="container welcome-content">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <p class="eyebrow text-coral">CURADORIA PARA A VIDA REAL</p>
+          <h1>Encontre peças que fazem <span>sentido</span> para você.</h1>
+          <p class="welcome-lead">Uma seleção fictícia de marcas independentes, criada para deixar suas escolhas mais leves e interessantes.</p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <button class="btn btn-coral btn-lg" data-bs-toggle="modal" data-bs-target="#loginModal">Entrar na minha conta <i class="bi bi-arrow-up-right ms-2"></i></button>
+            <button class="btn btn-outline-light btn-lg" data-bs-toggle="collapse" data-bs-target="#guestWarning" aria-expanded="false" aria-controls="guestWarning">Continuar sem conta <i class="bi bi-arrow-down ms-2"></i></button>
+          </div>
+          <div class="collapse guest-warning mt-4" id="guestWarning">
+            <div class="warning-inner">
+              <div class="warning-icon"><i class="bi bi-eye-slash"></i></div>
+              <div>
+                <h2>Uma visita mais limitada</h2>
+                <p>Sem uma conta, você poderá explorar a vitrine, mas suas preferências não serão salvas. A lista de favoritos, recomendações personalizadas e o histórico desaparecem quando você fechar o navegador.</p>
+                <button class="btn btn-light btn-sm mt-1" id="continueGuest">Entendi, quero explorar <i class="bi bi-arrow-right ms-1"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 d-none d-lg-block">
+          <div class="welcome-art">
+            <div class="art-label">Nº 08 / 24</div>
+            <div class="art-shape art-shape-main"></div>
+            <div class="art-shape art-shape-small"></div>
+            <div class="art-caption"><span>seleção</span><strong>essenciais<br>de agora</strong></div>
+            <div class="art-line"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="container welcome-footer"><span>nexo / 2024</span><span>Feito para descobrir devagar.</span></div>
+  </main>
+
+  <div id="catalogScreen" class="catalog-screen d-none">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom" aria-label="Navegação principal">
+      <div class="container py-2">
+        <a class="brand-mark brand-dark" href="#catalogScreen"><span class="brand-dot"></span>nexo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-label="Abrir menu"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="mainNavigation">
+          <ul class="navbar-nav mx-auto gap-lg-3">
+            <li class="nav-item"><a class="nav-link active" data-view="discover" href="#descobrirView">Descobrir</a></li>
+            <li class="nav-item"><a class="nav-link" data-view="brands" href="#marcasView">Marcas</a></li>
+            <li class="nav-item"><a class="nav-link" data-view="inspiration" href="#inspiracoesView">Inspirações</a></li>
+          </ul>
+          <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0"><span class="guest-badge" id="userBadge"><i class="bi bi-incognito me-1"></i> visitante</span><button class="btn btn-sm btn-outline-dark d-none" id="publishButton" data-bs-toggle="modal" data-bs-target="#publishModal"><i class="bi bi-plus-lg me-1"></i>Publicar item</button><button class="icon-button" id="favoritesButton" data-view="favorites" aria-label="Favoritos"><i class="bi bi-heart"></i></button><button class="icon-button" id="bagButton" data-view="bag" aria-label="Sacola"><i class="bi bi-bag"></i></button><button class="icon-button theme-toggle" id="themeToggle" aria-label="Ativar tema escuro" title="Trocar tema"><i class="bi bi-moon-stars"></i></button></div>
+        </div>
+      </div>
+    </nav>
+
+    <header id="descobrirView" class="catalog-header site-view discover-view">
+      <div class="container">
+        <p class="eyebrow text-coral">COLEÇÃO DE SETEMBRO</p>
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3">
+          <div><h1>Escolhas com intenção.</h1><p class="mb-0">Produtos fictícios, ideias reais para o seu próximo achado.</p></div>
+          <span class="product-count" id="productCount">8 achados</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="container search-area site-view discover-view" aria-label="Busca e filtros de produtos">
+      <div class="search-box"><i class="bi bi-search"></i><input id="searchInput" type="search" placeholder="Busque por produto, marca ou palavra-chave" aria-label="Buscar produtos"></div>
+      <div class="filters-row mt-3">
+        <select id="brandFilter" class="form-select" aria-label="Filtrar por marca"><option value="">Todas as marcas</option><option value="Aroeira">Aroeira</option><option value="Fio Norte">Fio Norte</option><option value="Lume">Lume</option><option value="Orla">Orla</option></select>
+        <select id="typeFilter" class="form-select" aria-label="Filtrar por tipo"><option value="">Todos os tipos</option><option value="Casa">Casa</option><option value="Moda">Moda</option><option value="Acessórios">Acessórios</option></select>
+        <select id="colorFilter" class="form-select" aria-label="Filtrar por cor"><option value="">Todas as cores</option><option value="Natural">Natural</option><option value="Preto">Preto</option><option value="Terracota">Terracota</option><option value="Azul">Azul</option></select>
+        <select id="priceFilter" class="form-select" aria-label="Filtrar por preço"><option value="">Qualquer preço</option><option value="0-100">Até R$ 100</option><option value="100-250">R$ 100 a R$ 250</option><option value="250-9999">Acima de R$ 250</option></select>
+        <button class="btn btn-link clear-filters" id="clearFilters">Limpar filtros</button>
+      </div>
+    </section>
+
+    <section class="container product-section site-view discover-view"><div id="productGrid" class="row g-4"></div><div id="emptyState" class="empty-state d-none"><i class="bi bi-search"></i><h2>Nenhum achado por aqui</h2><p>Tente mudar os filtros ou buscar por outro termo.</p></div></section>
+
+    <section id="marcasView" class="container inner-view site-view d-none"><p class="eyebrow text-coral">CONHEÇA QUEM CRIA</p><h1>Marcas com um ponto de vista.</h1><p class="inner-lead">Pequenos estúdios e empresas fictícias que colocam intenção em cada detalhe.</p><div id="brandGrid" class="row g-4 mt-3"></div></section>
+    <section id="inspiracoesView" class="container inner-view site-view d-none"><p class="eyebrow text-coral">EDITORIAL NEXO</p><h1>Ideias para olhar diferente.</h1><p class="inner-lead">Notas, combinações e referências para deixar a rotina um pouco mais autoral.</p><div class="row g-4 mt-3"><article class="col-md-7"><div class="editorial-feature"><span>GUIA 01 / CASA</span><h2>O silêncio das coisas bem escolhidas</h2><p>Texturas naturais, objetos úteis e espaço para o que realmente importa.</p><button class="btn btn-light" data-view="discover">Explorar produtos <i class="bi bi-arrow-up-right ms-2"></i></button></div></article><article class="col-md-5"><div class="editorial-note"><i class="bi bi-sunrise"></i><span>NOTA DE ESTILO</span><h2>Uma cor quente muda o dia.</h2><p>Descubra detalhes terracota na coleção de setembro.</p><button class="btn btn-outline-dark" data-view="discover">Ver seleção</button></div></article></div></section>
+    <section id="favoritosView" class="container inner-view site-view d-none"><p class="eyebrow text-coral">SUA CURADORIA</p><h1>Favoritos.</h1><p class="inner-lead" id="favoritesMessage">Seus produtos guardados aparecem aqui.</p><div id="favoritesGrid" class="row g-4 mt-3"></div></section>
+    <section id="sacolaView" class="container inner-view site-view d-none"><p class="eyebrow text-coral">SUA SACOLA</p><h1>Quase lá.</h1><div id="bagEmpty" class="empty-state inner-empty"><i class="bi bi-bag"></i><h2>Sua sacola está vazia</h2><p>Explore a vitrine e encontre algo que combine com você.</p><button class="btn btn-coral" data-view="discover">Voltar para descobrir</button></div><div id="bagContent" class="row g-5 d-none"><div class="col-lg-8"><div id="bagItems"></div></div><aside class="col-lg-4"><div class="bag-summary"><p class="eyebrow text-coral">RESUMO DO PEDIDO</p><div class="summary-line"><span>Subtotal</span><strong id="bagSubtotal">R$ 0,00</strong></div><div class="summary-line"><span>Entrega</span><span>Grátis</span></div><hr><div class="summary-line total-line"><span>Total</span><strong id="bagTotal">R$ 0,00</strong></div><button id="checkoutButton" class="btn btn-coral w-100 mt-4">Finalizar pedido <i class="bi bi-arrow-right ms-2"></i></button><p id="checkoutMessage" class="small text-muted text-center mt-3 mb-0"></p></div></aside></div></section>
+
+    <footer class="site-footer"><div class="container"><div class="row gy-4"><div class="col-lg-5"><a class="brand-mark brand-dark" data-view="discover" href="#descobrirView"><span class="brand-dot"></span>nexo</a><p class="footer-copy mt-3">Uma vitrine fictícia para escolhas que contam um pouco de quem você é.</p></div><div class="col-6 col-lg-2"><h3>Explorar</h3><a data-view="discover" href="#descobrirView">Novidades</a><a data-view="brands" href="#marcasView">Marcas</a><a data-view="inspiration" href="#inspiracoesView">Guia de estilos</a></div><div class="col-6 col-lg-2"><h3>Ajuda</h3><a href="#sacolaView">Entrega</a><a href="#sacolaView">Trocas</a><a href="#sacolaView">Contato</a></div><div class="col-lg-3"><h3>Fique por dentro</h3><p class="small text-muted">Receba achados e histórias no seu e-mail.</p><div class="newsletter"><input id="newsletterEmail" type="email" placeholder="seu@email.com" aria-label="Seu e-mail"><button id="newsletterButton" aria-label="Cadastrar e-mail"><i class="bi bi-arrow-up-right"></i></button></div></div></div><div class="footer-bottom mt-5"><span>© 2024 Nexo Comércio Fictício Ltda.</span><span>Instagram &nbsp; Pinterest &nbsp; Newsletter</span></div></div></footer>
+  </div>
+
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content login-modal"><div class="modal-header border-0"><h2 class="modal-title" id="loginModalLabel">Acesse o Nexo.</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button></div><div class="modal-body pt-0"><p class="text-muted">Escolha seu acesso para entrar na experiência certa.</p><ul class="nav nav-pills login-tabs mb-4" role="tablist"><li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#clientAccess" type="button" role="tab"><i class="bi bi-person me-1"></i> Cliente</button></li><li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#supporterAccess" type="button" role="tab"><i class="bi bi-building me-1"></i> Apoiador</button></li></ul><div class="tab-content"><div class="tab-pane fade show active" id="clientAccess" role="tabpanel"><p class="small text-muted">Salve favoritos e receba recomendações de produtos.</p><form id="clientLoginForm"><label for="clientEmail" class="form-label">Seu e-mail</label><input id="clientEmail" type="email" class="form-control mb-3" placeholder="voce@email.com" required><label for="clientPassword" class="form-label">Senha</label><input id="clientPassword" type="password" class="form-control mb-4" placeholder="••••••••" required><button class="btn btn-coral w-100" type="submit">Entrar como cliente <i class="bi bi-arrow-right ms-2"></i></button></form><p class="small text-center text-muted mt-4 mb-0">Ainda não tem conta? <a href="#" class="text-coral">Criar conta de cliente</a></p></div><div class="tab-pane fade" id="supporterAccess" role="tabpanel"><p class="small text-muted">Cadastre sua empresa e apresente seus itens para a comunidade.</p><form id="supporterLoginForm"><label for="companyName" class="form-label">Nome da empresa</label><input id="companyName" type="text" class="form-control mb-3" placeholder="Nome da sua marca" required><label for="supporterEmail" class="form-label">E-mail comercial</label><input id="supporterEmail" type="email" class="form-control mb-3" placeholder="contato@empresa.com" required><label for="supporterPassword" class="form-label">Senha</label><input id="supporterPassword" type="password" class="form-control mb-4" placeholder="••••••••" required><button class="btn btn-coral w-100" type="submit">Cadastrar empresa <i class="bi bi-arrow-right ms-2"></i></button></form></div></div></div></div></div>
+
+  <div class="modal fade" id="publishModal" tabindex="-1" aria-labelledby="publishModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content login-modal"><div class="modal-header border-0"><h2 class="modal-title" id="publishModalLabel">Publicar um item.</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button></div><div class="modal-body pt-0"><p class="text-muted">Adicione um produto para ele aparecer na vitrine.</p><form id="publishForm"><label for="itemName" class="form-label">Nome do item</label><input id="itemName" type="text" class="form-control mb-3" placeholder="Ex.: Banco Aurora" required><div class="row"><div class="col-6"><label for="itemType" class="form-label">Tipo</label><select id="itemType" class="form-select mb-3" required><option value="Casa">Casa</option><option value="Moda">Moda</option><option value="Acessórios">Acessórios</option></select></div><div class="col-6"><label for="itemColor" class="form-label">Cor</label><select id="itemColor" class="form-select mb-3" required><option value="Natural">Natural</option><option value="Preto">Preto</option><option value="Terracota">Terracota</option><option value="Azul">Azul</option></select></div></div><label for="itemPrice" class="form-label">Preço</label><input id="itemPrice" type="number" min="1" step="0.01" class="form-control mb-4" placeholder="0,00" required><button class="btn btn-coral w-100" type="submit">Colocar na vitrine <i class="bi bi-plus-lg ms-2"></i></button></form></div></div></div></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
